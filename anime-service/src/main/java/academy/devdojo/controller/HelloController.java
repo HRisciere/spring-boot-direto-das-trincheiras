@@ -1,9 +1,22 @@
-package academy.devdojo.controllers;
+package academy.devdojo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+// Spring Bean é uma instância de um objeto criada pelo Spring boot
+// Como o RestController entende que isso é um Spring bean?
+// Tem 3 anotações que identificam uma classe como um bean
+//@Component
+//@Service
+//@Repository
+
+// Como o Spring identifica esses "beans"?
+// Ele identifica através de uma anotação que fica dentro do SpringBootApplication que é o "ComponentScan"
+// ComponentScan vai olhar pelas Classes, começando pela raiz do pacote que a classe AnimeServiceApplication está
+// no caso é o academy.devdojo e vai procurar por classes que ele identifica como Spring beans
+// Nesse caso ele só identifica 1, que é o HelloController, mas o Spring faz o carregamento de outras classes, para funcionar
+
  // @RequestMapping(value = "greetings")
 public class HelloController {
 
